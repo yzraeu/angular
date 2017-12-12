@@ -1,4 +1,28 @@
 <section>
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button class="btn btn-primary" (click)="botaoClicado()">{{ buttonMessage}}</button>
+      <br><br>
+      <input type="text" 
+      (keyup)="teclaPressionada($event)" 
+      (keyup.enter)="salva($event.target.value)"
+      (blur)="salva(campoInput.value)"
+      #campoInput>
+
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
+
+      <br>
+      <br>
+      <span 
+      (mouseover)='mouseOverAndOut()'
+      (mouseout)='mouseOverAndOut()'
+      [class.highlight]='mousePorCima'>{{ textoMouse }}</span>
+    </div>
+  </article>
+</section>
+<!-- <section>
 
   <article>
     <h3>Class e Style Binding</h3>
@@ -40,4 +64,4 @@
   </article>
 
 
-</section>
+</section> -->
