@@ -1,5 +1,16 @@
 <section>
 	<article>
+		<h3>Input/Output Properties</h3>
+
+		<app-curso [nomeCurso]="nomeDoCurso"></app-curso>
+
+		<input type="text" [(ngModel)]='nomeDoCurso'>
+
+	</article>
+</section>
+
+<!-- <section>
+	<article>
 		<h3>Two-way Data Binding</h3>
 		<div>
 			<input type="text" [value]="nome" (input)="nome = $event.target.value">
@@ -81,4 +92,4 @@
 	</article>
 
 
-</section>
+</section> -->

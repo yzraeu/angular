@@ -20,6 +20,10 @@ export class DataBindingComponent implements OnInit {
 
   pessoa: any = { nome: 'Eu', idade: 20 };
 
+  nomeDoCurso = 'Angular';
+
+  deDentro = 'Fora';
+
   constructor() {}
 
   ngOnInit() {}
