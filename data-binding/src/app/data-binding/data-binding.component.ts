@@ -24,6 +24,8 @@ export class DataBindingComponent implements OnInit {
 
   deDentro = 'Fora';
 
+  valorInicial = 15;
+
   constructor() {}
 
   ngOnInit() {}
@@ -52,5 +54,10 @@ export class DataBindingComponent implements OnInit {
   mouseOverAndOut() {
     this.mousePorCima = !this.mousePorCima;
     this.textoMouse = this.mousePorCima ? 'Aaee' : 'Passe sobre mim';
+  }
+
+  onMudouValor(evento)
+  {
+	  console.log(evento.novoValor);
   }
 }
