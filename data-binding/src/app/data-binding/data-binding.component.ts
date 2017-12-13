@@ -56,8 +56,7 @@ export class DataBindingComponent implements OnInit {
     this.textoMouse = this.mousePorCima ? 'Aaee' : 'Passe sobre mim';
   }
 
-  onMudouValor(evento)
-  {
-	  console.log(evento.novoValor);
+  onMudouValor(evento) {
+    console.log(evento.novoValor);
   }
 }
