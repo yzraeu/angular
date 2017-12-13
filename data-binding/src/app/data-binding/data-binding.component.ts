@@ -9,7 +9,7 @@ export class DataBindingComponent implements OnInit {
   url = 'http://loiane.com';
   cursoAngular = true;
   urlImagem = 'http://lorempixel.com/400/200/sports';
-  buttonMessage = 'Me clique!';
+  mensagemBotao = 'Me clique!';
   contagem = 0;
   valorAtual = '';
   valorSalvo = '';
@@ -40,7 +40,7 @@ export class DataBindingComponent implements OnInit {
 
   botaoClicado() {
     this.contagem++;
-    this.buttonMessage = 'Obrigado ' + this.contagem;
+    this.mensagemBotao = 'Obrigado ' + this.contagem;
   }
 
   teclaPressionada(evento: KeyboardEvent) {
