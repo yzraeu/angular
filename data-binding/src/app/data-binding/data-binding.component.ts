@@ -6,21 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-binding.component.css']
 })
 export class DataBindingComponent implements OnInit {
-
   url = 'http://loiane.com';
   cursoAngular = true;
   urlImagem = 'http://lorempixel.com/400/200/sports';
-  buttonMessage: string = 'Me clique!';
-  contagem: number = 0;
-  valorAtual: string = '';
-  valorSalvo: string = '';
-  mousePorCima: boolean = false;
-  textoMouse: string = 'Passe sobre mim';
+  buttonMessage = 'Me clique!';
+  contagem = 0;
+  valorAtual = '';
+  valorSalvo = '';
+  mousePorCima = false;
+  textoMouse = 'Passe sobre mim';
 
-  constructor() { }
+  nome = 'abc';
 
-  ngOnInit() {
-  }
+  pessoa: any = { nome: 'Eu', idade: 20 };
+
+  constructor() {}
+
+  ngOnInit() {}
 
   getValor() {
     return 1;
@@ -30,22 +32,21 @@ export class DataBindingComponent implements OnInit {
     return true;
   }
 
-  botaoClicado(){
+  botaoClicado() {
     this.contagem++;
     this.buttonMessage = 'Obrigado ' + this.contagem;
   }
 
-  teclaPressionada (evento: KeyboardEvent){
+  teclaPressionada(evento: KeyboardEvent) {
     this.valorAtual = (<HTMLInputElement>evento.target).value;
   }
 
-  salva(valor: string){
+  salva(valor: string) {
     this.valorSalvo = valor;
   }
 
-  mouseOverAndOut(){
+  mouseOverAndOut() {
     this.mousePorCima = !this.mousePorCima;
     this.textoMouse = this.mousePorCima ? 'Aaee' : 'Passe sobre mim';
-  } 
-
+  }
 }

@@ -1,67 +1,84 @@
 <section>
-  <article>
-    <h3>Event Binding</h3>
-    <div>
-      <button class="btn btn-primary" (click)="botaoClicado()">{{ buttonMessage}}</button>
-      <br><br>
-      <input type="text" 
-      (keyup)="teclaPressionada($event)" 
-      (keyup.enter)="salva($event.target.value)"
-      (blur)="salva(campoInput.value)"
-      #campoInput>
+	<article>
+		<h3>Two-way Data Binding</h3>
+		<div>
+			<input type="text" [value]="nome" (input)="nome = $event.target.value">
 
-      <p>Valor atual: {{ valorAtual }}</p>
-      <p>Valor salvo: {{ valorSalvo }}</p>
+			<input type="text" [ngModel]="nome" (ngModelChange)="nome = $event">
 
-      <br>
-      <br>
-      <span 
-      (mouseover)='mouseOverAndOut()'
-      (mouseout)='mouseOverAndOut()'
-      [class.highlight]='mousePorCima'>{{ textoMouse }}</span>
-    </div>
-  </article>
+			<input type="text" [(ngModel)]="nome">
+
+			<p>Você digitou: {{ nome }}</p>
+			<hr>
+			<input type="text" [(ngModel)]="pessoa.nome">
+			<input type="text" [(ngModel)]="pessoa.idade">
+
+			<p>Seu nome é {{ pessoa.nome }} e sua idade {{ pessoa.idade }}</p>
+
+		</div>
+	</article>
 </section>
-<!-- <section>
 
-  <article>
-    <h3>Class e Style Binding</h3>
-    <div>
-      Selecione uma classe:
-      <select #classe (change)="0">
-        <option value="alert-success">Success</option>
-        <option value="alert-info">Info</option>
-        <option value="alert-warning">Warning</option>
-        <option value="alert-danger">Danger</option>
-      </select>
-      <br><br>
-      <div class="alert {{classe.value}}">
-        Texto colorido conforme valor do combobox
-      </div>
-      <div [class.alert-success]="classe.value == 'alert-success'" class="alert" role="alert">Success</div>
-      <div [class.alert-info]="classe.value == 'alert-info'"class="alert" role="alert">Info</div>
-      <div [class.alert-warning]="classe.value == 'alert-warning'"class="alert" role="alert">Warning</div>
-      <div [class.alert-danger]="classe.value == 'alert-danger'" class="alert" role="alert">Danger</div>
+<section>
+	<article>
+		<h3>Event Binding</h3>
+		<div>
+			<button class="btn btn-primary" (click)="botaoClicado()">{{ buttonMessage}}</button>
+			<br>
+			<br>
+			<input type="text" (keyup)="teclaPressionada($event)" (keyup.enter)="salva($event.target.value)" (blur)="salva(campoInput.value)"
+			 #campoInput>
 
-      <div class="alert alert-danger" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'" role="alert">Erro apenas em caso de erro</div>
-    </div>
-  </article>
+			<p>Valor atual: {{ valorAtual }}</p>
+			<p>Valor salvo: {{ valorSalvo }}</p>
 
-  <article>
-    <h3>Interpolação</h3>
-    <p>String renderizada com Interpolação: {{ url }}</p>
-    <p>Resultado de 1 + 1 é {{ 1 + 1 }}</p>
-    <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
-    <p>Curso de Angular e CurtirCurso: {{ cursoAngular && getCurtirCurso() }}</p>
-    <p></p>
-  </article>
+			<br>
+			<br>
+			<span (mouseover)='mouseOverAndOut()' (mouseout)='mouseOverAndOut()' [class.highlight]='mousePorCima'>{{ textoMouse }}</span>
+		</div>
+	</article>
+</section>
+<section>
 
-  <article>
-    <h3>Property Binding</h3>
-    <img src="{{ urlImagem }}" alt="">
-    <img [src]="urlImagem" alt="">
-    <img bind-src="urlImagem" alt="">
-  </article>
+	<article>
+		<h3>Class e Style Binding</h3>
+		<div>
+			Selecione uma classe:
+			<select #classe (change)="0">
+				<option value="alert-success">Success</option>
+				<option value="alert-info">Info</option>
+				<option value="alert-warning">Warning</option>
+				<option value="alert-danger">Danger</option>
+			</select>
+			<br>
+			<br>
+			<div class="alert {{classe.value}}">
+				Texto colorido conforme valor do combobox
+			</div>
+			<div [class.alert-success]="classe.value == 'alert-success'" class="alert" role="alert">Success</div>
+			<div [class.alert-info]="classe.value == 'alert-info'" class="alert" role="alert">Info</div>
+			<div [class.alert-warning]="classe.value == 'alert-warning'" class="alert" role="alert">Warning</div>
+			<div [class.alert-danger]="classe.value == 'alert-danger'" class="alert" role="alert">Danger</div>
+
+			<div class="alert alert-danger" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'" role="alert">Erro apenas em caso de erro</div>
+		</div>
+	</article>
+
+	<article>
+		<h3>Interpolação</h3>
+		<p>String renderizada com Interpolação: {{ url }}</p>
+		<p>Resultado de 1 + 1 é {{ 1 + 1 }}</p>
+		<p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+		<p>Curso de Angular e CurtirCurso: {{ cursoAngular && getCurtirCurso() }}</p>
+		<p></p>
+	</article>
+
+	<article>
+		<h3>Property Binding</h3>
+		<img src="{{ urlImagem }}" alt="">
+		<img [src]="urlImagem" alt="">
+		<img bind-src="urlImagem" alt="">
+	</article>
 
 
-</section> -->
+</section>
