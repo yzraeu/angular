@@ -15,7 +15,9 @@
 </div>
 
 <br>
-<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+<button type="button" class="btn btn-outline-danger" (click)="onMostrarCursos($event)">
+	Mostrar ou esconder cursos
+</button>
 
 <hr>
 <div [hidden]="!mostrarCursos">
