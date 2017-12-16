@@ -13,3 +13,19 @@
 <p [highlight]="'blue'" [defaultColor]="'gray'">
   Texto com hightlight - cores customizadas
 </p>
+
+<hr>
+
+<h3>ngElse</h3>
+
+<div *ngIf="mostrarCursos">
+  Lista de cursos
+</div>
+<div *ngElse="mostrarCursos">
+  Não existem cursos
+</div>
+
+<br>
+<button type="button" class="btn btn-outline-danger" (click)="onMostrarCursos()">
+	Mostrar ou esconder cursos
+</button>
