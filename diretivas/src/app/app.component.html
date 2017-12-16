@@ -3,4 +3,22 @@
 <!-- <app-diretiva-ngfor></app-diretiva-ngfor> -->
 <!-- <app-diretiva-ngclass></app-diretiva-ngclass> -->
 <!-- <app-diretiva-ngstyle></app-diretiva-ngstyle> -->
-<app-operador-elvis></app-operador-elvis>
+<!-- <app-operador-elvis></app-operador-elvis> -->
+<!-- <app-diretiva-ngcontent>
+	<!-- ngContent puro ->
+	Veio do top
+	<app-operador-elvis></app-operador-elvis>
+</app-diretiva-ngcontent> -->
+
+
+<app-diretiva-ngcontent [msgBotao]="title">
+	<div class="titulo">Titulo ngContent</div>
+	<div class="corpo">
+		Veio do top
+		<app-operador-elvis></app-operador-elvis>
+	</div>
+	<div class="corpo">
+		Veio do top - corpo 2
+		<app-operador-elvis></app-operador-elvis>
+	</div>
+</app-diretiva-ngcontent>
