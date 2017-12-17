@@ -4,7 +4,7 @@
 <p>Estrelas: {{ livro.avaliacao | number:'1.0-1' }}</p>
 <p>Paginas: {{ livro.paginas }}</p>
 <p>Preço: {{ livro.preco | currency:'BRL' }}</p>
-<p>Data Lançamento: {{ livro.dataLancamento | date:'dd/MM/yyyy' }}</p>
+<p>Data Lançamento: {{ livro.dataLancamento | date }}</p>
 <p>Url: {{ livro.url }}</p>
 <br>
 <p>Livro: {{ livro | json }}</p>
