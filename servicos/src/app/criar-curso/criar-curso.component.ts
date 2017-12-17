@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { CursosService } from '../cursos/cursos.service';
+
+@Component({
+  selector: 'app-criar-curso',
+  templateUrl: './criar-curso.component.html',
+  styleUrls: ['./criar-curso.component.css']
+})
+export class CriarCursoComponent implements OnInit {
+  nomeCurso: string;
+  mensagemErro: string;
+  constructor(private _cursosService: CursosService) {}
+
+  ngOnInit() {}
+
+  adicionarCurso(evento) {
+    const objetoRetorno = this._cursosService.addCurso(this.nomeCurso);
+    console.log(objetoRetorno);
+    if (objetoRetorno.ok) {
+      this.mensagemErro = this.nomeCurso = '';
+    } else {
+      this.mensagemErro = objetoRetorno.mensagem;
+    }
+  }
+}

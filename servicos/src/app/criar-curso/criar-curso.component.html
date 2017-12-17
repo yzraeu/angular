@@ -1,0 +1,5 @@
+<input type="text" [(ngModel)]="nomeCurso" (keyup.enter)="adicionarCurso()">
+<br>
+<span>{{ mensagemErro }}</span>
+<br>
+<button (click)="adicionarCurso()">Adicionar</button>
