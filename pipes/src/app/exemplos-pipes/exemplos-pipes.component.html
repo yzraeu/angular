@@ -14,10 +14,26 @@
 <input type="text" #novoValor>
 <button (click)="addCurso(novoValor.value)">Adiciona Curso</button>
 
-
+<h5>Pipe Puro</h5>
 
 <ul>
     <li *ngFor="let livro of livros | filtroArray:filtro">
+        {{ livro }}
+    </li>
+</ul>
+
+<h5>Pipe Impuro</h5>
+
+<ul>
+    <li *ngFor="let livro of livros | filtroArrayImpuro:filtro">
+        {{ livro }}
+    </li>
+</ul>
+
+<h5>Filtros corretos</h5>
+
+<ul>
+    <li *ngFor="let livro of obterCursos()">
         {{ livro }}
     </li>
 </ul>
