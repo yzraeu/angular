@@ -1,8 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class CursosService {
+  static emissorCursoGlobal = new EventEmitter<string>();
+
   private cursos: string[] = ['Angular2', '.NET', 'Xamarin'];
+
+  emissorCurso = new EventEmitter<string>();
 
   constructor() {
     console.log('CursosService');
@@ -22,7 +26,8 @@ export class CursosService {
     }
 
     this.cursos.push(nomeCurso);
-
+    this.emissorCurso.emit(nomeCurso);
+    CursosService.emissorCursoGlobal.emit(nomeCurso);
     return { ok: true, mensagem: null };
   }
 }

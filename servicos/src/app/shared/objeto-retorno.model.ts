@@ -1,7 +1,10 @@
-import { Injectable } from '@angular/core';
+export interface ObjetoRetorno {
+  estado: Estado;
+  mensagem: string;
+}
 
-@Injectable()
-export class ObjetoRetornoModel {
-  constructor(private _ok: boolean, private _mensagem: string) {
-  }
+enum Estado {
+  NotSet,
+  Ok,
+  Erro
 }

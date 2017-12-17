@@ -1,5 +1,13 @@
-<input type="text" [(ngModel)]="nomeCurso" (keyup.enter)="adicionarCurso()">
+<input type="text" #nomeCursoTextBox [(ngModel)]="nomeCurso" (keyup.enter)="adicionarCurso()">
 <br>
 <span>{{ mensagemErro }}</span>
 <br>
 <button (click)="adicionarCurso()">Adicionar</button>
+
+<ul>
+    <li *ngFor="let curso of cursos">
+        {{ curso }}
+    </li>
+</ul>
+
+<app-recebe-curso-criado></app-recebe-curso-criado>

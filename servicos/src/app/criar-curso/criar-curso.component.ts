@@ -4,14 +4,19 @@ import { CursosService } from '../cursos/cursos.service';
 @Component({
   selector: 'app-criar-curso',
   templateUrl: './criar-curso.component.html',
-  styleUrls: ['./criar-curso.component.css']
+  styleUrls: ['./criar-curso.component.css'],
+  providers: [CursosService]
 })
 export class CriarCursoComponent implements OnInit {
   nomeCurso: string;
   mensagemErro: string;
+  cursos: string[] = [];
+
   constructor(private _cursosService: CursosService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cursos = this._cursosService.getCursos();
+  }
 
   adicionarCurso(evento) {
     const objetoRetorno = this._cursosService.addCurso(this.nomeCurso);

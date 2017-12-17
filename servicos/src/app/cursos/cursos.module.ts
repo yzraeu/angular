@@ -8,6 +8,6 @@ import { CursosService } from './cursos.service';
   imports: [CommonModule],
   exports: [CursosComponent],
   declarations: [CursosComponent],
-  providers: [CursosService]
+  //providers: [CursosService]
 })
 export class CursosModule {}
