@@ -8,12 +8,14 @@ import { CamelCasePipe } from './camel-case.pipe';
 import { SettingsService } from './settings.service';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { FiltroArrayPipe } from './filtro-array.pipe';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
-  declarations: [AppComponent, ExemplosPipesComponent, CamelCasePipe],
-  imports: [BrowserModule],
+  declarations: [AppComponent, ExemplosPipesComponent, CamelCasePipe, FiltroArrayPipe],
+  imports: [BrowserModule, FormsModule],
   providers: [
     SettingsService,
     {
