@@ -9,15 +9,26 @@ import {
   MatFormFieldModule
 } from '@angular/material';
 
+import { Routing } from './app.routing';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
-import { Routing } from './app.routing';
 import { CursoDetailComponent } from './curso-detail/curso-detail.component';
 
+import { CursosService } from './cursos/cursos.service';
+import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
+
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, CursosComponent, CursoDetailComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    CursosComponent,
+    CursoDetailComponent,
+    CursoNaoEncontradoComponent
+  ],
   imports: [
     BrowserModule,
     MatButtonModule,
@@ -26,7 +37,7 @@ import { CursoDetailComponent } from './curso-detail/curso-detail.component';
     NoopAnimationsModule,
     Routing
   ],
-  providers: [],
+  providers: [CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
