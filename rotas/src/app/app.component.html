@@ -8,10 +8,15 @@
       <li routerLinkActive="active">
         <a routerLink="/cursos">Cursos</a>
       </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/curso/', idCurso.value]">Curso Angular</a>
+      </li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
+  <p>Id do curso</p>
+  <input type="text" placeholder="Id" #idCurso>
   <router-outlet></router-outlet>
 </div>

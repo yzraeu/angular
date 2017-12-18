@@ -14,9 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { Routing } from './app.routing';
+import { CursoDetailComponent } from './curso-detail/curso-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, CursosComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, CursosComponent, CursoDetailComponent],
   imports: [
     BrowserModule,
     MatButtonModule,
