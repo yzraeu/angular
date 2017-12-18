@@ -9,7 +9,7 @@ import {
   MatFormFieldModule
 } from '@angular/material';
 
-import { Routing } from './app.routing';
+import { AppRoutingModule } from './app.routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -35,7 +35,7 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
     MatInputModule,
     MatFormFieldModule,
     NoopAnimationsModule,
-    Routing
+    AppRoutingModule
   ],
   providers: [CursosService],
   bootstrap: [AppComponent]
