@@ -11,7 +11,7 @@ const APP_ROUTES: Routes = [
     { path: 'cursos', component: CursosComponent }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
+export const Routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
 
 /*import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';

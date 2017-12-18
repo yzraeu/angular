@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
-import { routing } from './app.routing';
+import { Routing } from './app.routing';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, LoginComponent, CursosComponent],
@@ -23,7 +23,7 @@ import { routing } from './app.routing';
     MatInputModule,
     MatFormFieldModule,
     NoopAnimationsModule,
-    routing
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]
