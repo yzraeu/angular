@@ -1,4 +1,15 @@
-<p>
-  alunos works!
-</p>
-<router-outlet></router-outlet>
+<div class="row">
+  <div class="col s6">
+    <h3>Lista de Alunos</h3>
+    <div class="collection">
+      <a class="collection-item" [routerLink]="[aluno.id]" *ngFor="let aluno of alunos">{{ aluno.nome }} - {{ aluno.email }}</a>
+    </div>
+  </div>
+  <div class="col s6">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<button class="btn waves-effect waves-light" (click)="novoAluno()">Novo
+  <i class="material-icons right">add</i>
+</button>
