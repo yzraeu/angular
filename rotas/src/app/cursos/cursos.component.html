@@ -5,7 +5,7 @@
 <p>Paginas: {{ pagina }}</p>
 
 <div class="collection">
-  <a *ngFor="let curso of cursos" [routerLink]="['/curso/', curso.id]" class="collection-item">{{ curso.nome }}</a>
+  <a *ngFor="let curso of cursos" [routerLink]="['/cursos/', curso.id]" class="collection-item">{{ curso.nome }}</a>
 </div>
 
 <button class="btn waves-effect waves-light" (click)="paginaAnterior()">
