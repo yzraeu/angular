@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { AlunosService } from '../alunos.service';
 import { Router } from '@angular/router';
+import { Aluno } from '../aluno';
 
 @Component({
   selector: 'app-aluno-detalhe',
@@ -22,10 +23,14 @@ export class AlunoDetalheComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.inscricao = this.route.params.subscribe((params: any) => {
+    /* this.inscricao = this.route.params.subscribe((params: any) => {
       const id = params.id;
 
       this.aluno = this.alunoService.getAluno(id);
+    });*/
+
+    this.inscricao = this.route.data.subscribe((info: { aluno: Aluno }) => {
+      this.aluno = info.aluno;
     });
   }
 
