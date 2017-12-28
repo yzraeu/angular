@@ -15,15 +15,13 @@ export class AlunosGuard implements CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    console.log(route);
-    console.log(state);
 
     if (state.url.includes('editar')) {
       if (this.authService.ehAdmin()) {
         return true;
       } else {
-        alert('somente admin pode editar');
-        return false;
+        // alert('somente admin pode editar');
+        // return false;
       }
     }
     return true;
