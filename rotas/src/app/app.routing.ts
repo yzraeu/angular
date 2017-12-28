@@ -11,12 +11,14 @@ const APP_ROUTES: Routes = [
   {
     path: 'cursos',
     canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     canActivateChild: [CursosGuard],
     loadChildren: 'app/cursos/cursos.module#CursosModule' // LazyLoading
   },
   {
     path: 'alunos',
     canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: 'app/alunos/alunos.module#AlunosModule' // LazyLoading
   },
   { path: '', canActivate: [AuthGuard], component: HomeComponent },
