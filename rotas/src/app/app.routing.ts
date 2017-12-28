@@ -5,11 +5,13 @@ import { ModuleWithProviders } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CursosGuard } from './guards/cursos.guard';
 
 const APP_ROUTES: Routes = [
   {
     path: 'cursos',
     canActivate: [AuthGuard],
+    canActivateChild: [CursosGuard],
     loadChildren: 'app/cursos/cursos.module#CursosModule' // LazyLoading
   },
   {
