@@ -28,9 +28,9 @@ export class AuthGuard implements CanActivate, CanLoad {
   private podeAcessar() {
     if (this.authService.usuarioAutenticado()) {
       return true;
+    } else {
+      this.router.navigate(['/login']);
+      return false;
     }
-
-    this.router.navigate(['/login']);
-    return false;
   }
 }
