@@ -20,4 +20,8 @@ export class TemplateFormComponent implements OnInit {
     console.log(form);
     console.log(this.usuario);
   }
+
+  campoValido(campo) {
+    return !campo.valid && campo.touched;
+  }
 }
