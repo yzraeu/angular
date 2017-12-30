@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-template-form',
@@ -12,13 +14,34 @@ export class TemplateFormComponent implements OnInit {
     email: ''
   };
 
-  constructor() {}
+  constructor(private http: Http) {}
 
   ngOnInit() {}
 
   onSubmit(form: NgForm) {
     console.log(form);
     console.log(this.usuario);
+  }
+
+  consultaCEP(cep) {
+    cep = cep.replace(/\D/g, '');
+
+    if (cep === '') {
+      return;
+    }
+
+    const validaCep = /^[0-9]{8}$/;
+
+    if (!validaCep.test(cep)) {
+      return;
+    }
+
+    this.http
+      .get(`//viacep.com.br/ws/${cep}/json/`)
+      .map(dados => dados.json())
+      .subscribe(dados => {
+        console.log(dados);
+      });
   }
 
   campoValido(campo) {
