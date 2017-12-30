@@ -11,5 +11,5 @@
     <div class="alert alert-danger" *ngIf="!email.valid && email.touched">E-mail inválido</div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Enviar</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Enviar</button>
 </form>
